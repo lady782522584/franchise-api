@@ -89,6 +89,15 @@ La API queda en `http://localhost:8080`. Solo la imagen de la API:
 docker build -t franchise-api .
 docker run -p 8080:8080 -e MONGODB_URI='mongodb+srv://...' franchise-api
 ```
+## Despliegue en la nube
+
+La API está desplegada en Render (con Docker) y usa MongoDB Atlas como base de datos:
+
+- API: https://franchise-api-k6j4.onrender.com
+- Swagger: https://franchise-api-k6j4.onrender.com/swagger-ui.html
+
+Nota: está en el plan gratuito de Render, así que si lleva un rato sin uso, la primera petición puede tardar cerca de un minuto en responder mientras la app despierta.
+
 ## Tests
 
 ```bash
