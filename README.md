@@ -117,6 +117,20 @@ Pruebas unitarias reactivas con Mockito y StepVerifier (no requieren base de dat
 
 (si utilice ia principalmente para el readme considero que es muy buena para documentaciony y la utilizo para validar fallas en mis proyectos solo si son errores conocidos en esta caso solo la utilice para el readme ya que siento que me ayuda a optimizar tiempo ya que en lo demas como tengo conocimiento solido no se me presento ningun dificultad, Yo ejecuté y probé cada endpoint, y corregí problemas como la propiedad de conexión de MongoDB en Spring Boot 4 y la autenticación con Atlas.")
 
+## Infraestructura como código (Terraform)
+
+La carpeta `terraform/` define en Terraform el proyecto, el cluster gratuito M0, el usuario y el acceso de red de MongoDB Atlas.
+
+```bash
+cd terraform
+export MONGODB_ATLAS_PUBLIC_KEY=...
+export MONGODB_ATLAS_PRIVATE_KEY=...
+terraform init
+terraform plan -var org_id=... -var db_password=...
+```
+
+La configuración se validó con `terraform validate`. No se aplicó para no duplicar el cluster gratuito que ya usa la API desplegada.
+
 ## Autora
 
 Leidy Mahecha
