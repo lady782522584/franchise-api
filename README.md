@@ -75,7 +75,20 @@ Cuerpos de ejemplo:
 - Stock: `{"stock": 100}`
 
 Errores: 404 si la franquicia, sucursal o producto no existe, y 400 si los datos son inválidos (formato RFC 7807).
+## Docker
 
+Levantar la API con un MongoDB local (no requiere Atlas):
+
+```bash
+docker compose up --build
+```
+
+La API queda en `http://localhost:8080`. Solo la imagen de la API:
+
+```bash
+docker build -t franchise-api .
+docker run -p 8080:8080 -e MONGODB_URI='mongodb+srv://...' franchise-api
+```
 ## Tests
 
 ```bash
@@ -93,7 +106,7 @@ Pruebas unitarias reactivas con Mockito y StepVerifier (no requieren base de dat
 
 ## Uso de IA
 
-(si utilice ia principalmente para el readme considero que es muy buena para documentaciony y la utilizo para validar fallas en mis proyectos solo si son errores conocidos en esta caso solo la utilice para el readme por que tenia solido conocimiento y no se me presento ningun dificultad, Yo ejecuté y probé cada endpoint, y corregí problemas como la propiedad de conexión de MongoDB en Spring Boot 4 y la autenticación con Atlas.")
+(si utilice ia principalmente para el readme considero que es muy buena para documentaciony y la utilizo para validar fallas en mis proyectos solo si son errores conocidos en esta caso solo la utilice para el readme ya que siento que me ayuda a optimizar tiempo ya que en lo demas como tengo conocimiento solido no se me presento ningun dificultad, Yo ejecuté y probé cada endpoint, y corregí problemas como la propiedad de conexión de MongoDB en Spring Boot 4 y la autenticación con Atlas.")
 
 ## Autora
 
